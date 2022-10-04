@@ -49,11 +49,15 @@ def computar(palavra : list, mt : dict) -> bool:
                 return "REJEITA"
 
 
-test_string = "{'inicial': 0, 'aceita': 1, 'rejeita': 2, 'delta': [(0,0,0,1,D),(0,0,1,0,D),(0,3,b,b,E), (3,1,0,0,P),(3,1,1,1,P)]}"
+maquina_turing = input()
+leituras = int(input())
 
-mt = converter_para_dict(test_string)
+mt = converter_para_dict(maquina_turing)
 
-palavras = ['100', '10101', '000000000']
+palavras = list()
+
+for leitura in range(leituras):
+    palavras.append(input())
 
 for palavra in palavras:
     res = computar(list(palavra), mt)
